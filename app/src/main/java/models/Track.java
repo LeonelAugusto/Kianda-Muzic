@@ -23,6 +23,10 @@ public class Track {
         this.trackCover = trackCover;
     }
 
+    public Track() {
+
+    }
+
     public int getId() {
         return id;
     }

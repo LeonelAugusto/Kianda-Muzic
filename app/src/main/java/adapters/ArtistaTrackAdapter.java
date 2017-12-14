@@ -56,12 +56,17 @@ public class ArtistaTrackAdapter extends RecyclerView.Adapter<ArtistaTrackAdapte
     public void onBindViewHolder(ViewHolder holder, int position) {
 
         holder.mArtistName.setText(trackList.getArtistTracks().get(position).getArtist().getName() );
+        holder.mTrackName.setText(trackList.getArtistTracks().get(position).getaName());
+        holder.mTrackCover.setImageResource(trackList.getArtistTracks().get(position).getTrackCover());
+        if(trackList.getArtistTracks().get(position).getArtist().isVerified()){
+            holder.mArtistVerfiedBadge.setImageResource(R.drawable.ic_verified_user_black_18dp);
+        }else {
+            //N„o apresentamos o bagde pois o artista n„o foi verificado
+        }
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return trackList.getArtistTracks().size();
     }
-
-
 }
